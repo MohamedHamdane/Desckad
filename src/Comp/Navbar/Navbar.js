@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaBars, FaMoon, FaSun, FaTimes } from 'react-icons/fa';
-// import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
@@ -21,9 +20,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
     <>
       <header className="header-container">
         <div className="header-left">
-          {/* <Link to="/" className="header-name-link"> */}
-          <img     src={isDarkMode ? "/img/logo_blanc.svg" : "/img/logo_noir.svg"} alt='logo' />
-          {/* </Link> */}
+          <img src={isDarkMode ? "/img/logo_blanc.svg" : "/img/logo_noir.svg"} alt='logo' className="header-logo" />
         </div>
         
         <div className="header-right">
@@ -42,10 +39,8 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
         <nav>
           <ul>
             {menuItems.map((item, index) => (
-              <li key={index}>
-                {/* <Link to={item.path} onClick={handleMenuItemClick} className="menu-item"> */}
-                  {item.name}
-                {/* </Link> */}
+              <li key={index} onClick={handleMenuItemClick}>
+                {item.name}
               </li>
             ))}
           </ul>

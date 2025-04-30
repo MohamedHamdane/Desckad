@@ -1,86 +1,173 @@
-   /* Navbar Styles */
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    transition: background-color 0.4s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
+/* Navbar Styles */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  transition: background-color 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo {
+  height: 40px; /* Fixed height for logo */
+  width: auto;
+  margin-left: 40px;
+}
+
+.header-right {
+  margin-top: 25px;
+  margin-right: 90px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dark-mode-toggle,
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.dark-mode-toggle {
+  font-size: 1.3rem;
+}
+
+.menu-toggle {
+  font-size: 1.8rem;
+}
+
+.dark-mode-toggle:hover,
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+.fullscreen-menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.4s ease-in-out;
+  z-index: 9;
+}
+
+.fullscreen-menu.open {
+  top: 0;
+}
+
+.fullscreen-menu nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.fullscreen-menu li {
+  margin: 1.5rem 0;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.fullscreen-menu li:hover {
+  color: var(--secondary-color);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
   .header-logo {
-    margin-left: 40px;
-    width: auto; /* Adjust the size as needed */
-    height: auto; /* Adjust the size as needed */
+    margin-left: 30px;
+    height: 35px;
   }
   
   .header-right {
-    margin-top: 25px;
-    margin-right: 90px;
-    display: flex;
-    align-items: center;
+    margin-right: 60px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    margin-left: 20px;
+    height: 30px;
   }
   
-  .dark-mode-toggle,
+  .header-right {
+    margin-right: 40px;
+    margin-top: 15px;
+    gap: 15px;
+  }
+  
+  .dark-mode-toggle {
+    font-size: 1.2rem;
+  }
+  
   .menu-toggle {
-    background: none;
-    border: none;
-    color: var(--text-color);
     font-size: 1.5rem;
-    cursor: pointer;
+  }
+  
+  .fullscreen-menu li {
+    font-size: 1.5rem;
+    margin: 1.2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0.8rem;
+  }
+  
+  .header-logo {
+    margin-left: 15px;
+    height: 25px;
+  }
+  
+  .header-right {
+    margin-right: 20px;
+    margin-top: 10px;
+    gap: 12px;
+  }
+  
+  .dark-mode-toggle {
+    font-size: 1.1rem;
+  }
+  
+  .menu-toggle {
+    font-size: 1.3rem;
+  }
+  
+  .fullscreen-menu li {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-logo {
     margin-left: 10px;
+    height: 22px;
   }
   
-  .menu-toggle {
-    font-size: 2rem;
-  }
-  
-  .fullscreen-menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: top 0.4s ease-in-out;
-    z-index: 9;
-  }
-  
-  .fullscreen-menu.open {
-    top: 0;
-  }
-  
-  .fullscreen-menu nav ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
+  .header-right {
+    margin-right: 15px;
+    gap: 10px;
   }
   
   .fullscreen-menu li {
-    margin: 1.5rem 0;
+    font-size: 1.2rem;
   }
-  
-  .fullscreen-menu li {
-    font-size: 1.5rem;
-  }
-  
-  .fullscreen-menu li a {
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 0.2s;
-  }
-  
-  .fullscreen-menu li a:hover {
-    color: var(--secondary-color);
-  }
-  
+}
