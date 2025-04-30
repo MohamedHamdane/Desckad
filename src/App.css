@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+/* Light Mode (Default) */
+:root {
+  --primary-color: #216778ff; /* Main color */
+  --secondary-color: #37abc8ff; /* Accent color */
+  --background-color: #ffffff; /* Light background */
+  --text-color: #1a1a1aff; /* Primary text color */
+  --border-color: #333333ff; /* Borders or secondary elements */
+  --very-light: rgb(240, 250, 253);
+  --box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Dark Mode */
+.dark {
+    --primary-color: #2d8da1ff;       /* Brighter version of your primary */
+    --secondary-color: #4fc8e6ff;     /* More vibrant accent color */
+    --background-color: #121212ff;    /* Dark background */
+    --text-color: #e0e0e0ff;          /* Light text for dark background */
+    --border-color: #444444ff;        /* Softer borders for dark mode */
+    --very-light: var(--background-color);  
+    --box-shadow: 0 5px 25px rgba(253, 253, 253, 0.936);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Default Light Mode */
+body {
+    background-color: var(--color-primary-light);
+    color: var(--color-text-light);
+    margin: 0;
+    font-family: sans-serif;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Dark Mode */
+  body.dark {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-dark);
   }
-  to {
-    transform: rotate(360deg);
-  }
-}

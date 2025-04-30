@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+// import './App.css';
+// // import Header from './Comp/Navbar/Header';
+// import Navbar from './Comp/Navbar/Navbar';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Navbar/>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React, { useState } from 'react';
+import Navbar from './Comp/Navbar/Navbar';
 import './App.css';
+import Landing from './Comp/Landing/Landing';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (isDarkMode) {
+      document.body.classList.remove('dark');
+    } else {
+      document.body.classList.add('dark');
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <Landing/>
     </div>
   );
 }
